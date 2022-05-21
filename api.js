@@ -54,4 +54,4 @@ Prometheus.startCollection();
 var errors = require('./errors/errorHandling');
 app.use(errors.errorHandling);
 
-module.exports = app.listen(Config.Env.server.port|3013);
+module.exports = app.listen(Config.Env.server.port|8080);
