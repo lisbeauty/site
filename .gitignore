@@ -1,0 +1,12 @@
+/node_modules/*
+node_modules/
+/grafana/data/*
+package-lock.json
+npm-debug.log
+coverage
+.vscode
+.nyc_output
+.eslintrc.json
+/local-others/*
+.env
+
