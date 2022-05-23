@@ -11,17 +11,13 @@
             "src": "/(.*)",
             "dest": "/",
             "continue": true
-        }
-    ],
-    "headers": [
+        },
         {
-          "source": "/contact",
-          "headers" : [
-            {
+            "src": "/contact",
+            "headers": {
               "key" : "Cache-Control",
               "value" : "no-cache no-store must-revalidate"
             }
-          ]
         }
-    ]    
+    ]
 }
