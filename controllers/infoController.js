@@ -8,6 +8,9 @@ var request = require("request");
 var mongoose = require("mongoose");
 
 exports.welcome = function(req, res) {
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+    res.setHeader("Expires", "0"); // Proxies.
     res.render("welcome", {
         messageSuccess: "",
         messageError: ""
@@ -94,11 +97,17 @@ exports.contact = async function(req, res, next) {
 
         await botMessage(req.body);
 
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("welcome", {
             messageSuccess: "Mensagem recebida! Obrigado!",
             messageError: ""
         });
     } catch (e) {
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+        res.setHeader("Expires", "0"); // Proxies.
         res.render("welcome", {
             messageSuccess: "",
             messageError: "Nossa! Tivemos problemas! Descupe-nos! \nPor favor, nos contate pelo fone (61) 98202 8857."
