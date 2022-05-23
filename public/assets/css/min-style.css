@@ -45,6 +45,52 @@ figure, header, nav, section, article, aside, footer, figcaption {
   height: 0;
 }
 
+.whatsApp-btn {
+  position: fixed;
+  /* display: none; */
+  background: #dc8cdb;
+  color: white;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 20px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 25px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.whatsApp-btn i {
+  padding-top: 12px;
+  color: #fff;
+}
+
+.insta-btn {
+  position: fixed;
+  /* display: none; */
+  background: #dc8cdb;
+  color: white;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 1;
+  font-size: 20px;
+  border-radius: 50%;
+  right: 15px;
+  bottom: 75px;
+  transition: background 0.5s;
+  z-index: 11;
+}
+
+.insta-btn i {
+  padding-top: 12px;
+  color: #fff;
+}
+
+
+
 .clearfix {
   display: inline-block;
 }
