@@ -83,8 +83,8 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Início</a></li>
-              <li class="scroll-to-section"><a href="#services">Serviços</a></li>
+              <li><a href="#top" class="active">Início</a></li>
+              <li><a href="#services">Serviços</a></li>
               <!-- <li class="scroll-to-section"><a href="#courses">Courses</a></li>
                           <li class="has-sub">
                               <a href="javascript:void(0)">Serviços</a>
@@ -97,8 +97,8 @@
                                   <li><a href="#contact-section">Design de sobrancelhas</a></li>
                               </ul>
                           </li> -->
-              <li class="scroll-to-section"><a href="#testimonials">Depoimentos</a></li>
-              <li class="scroll-to-section"><a href="#contact-section">Contatos</a></li>
+              <li><a href="#testimonials">Depoimentos</a></li>
+              <li><a href="#contact-section">Contatos</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -120,7 +120,7 @@
             <h6>Lis Beauty agradece sua visita!</h6>
             <h2>Mais beleza para suas sobrancelhas e <em>lábios!</em></h2>
             <div class="main-button-gradient">
-              <div class="scroll-to-section"><a href="#contact-send">Ganhe agora 20% de desconto!</a></div>
+              <div><a href="#contactsend">Ganhe agora 20% de desconto!</a></div>
             </div>
           </div>
         </div>
@@ -449,20 +449,20 @@
           </div>
         </div>
 
-        <div id="contact-send" class="col-lg-6">
+        <div id="contactsend" class="col-lg-6">
 
-          <form style="min-height: 100%;" id="contact" action="/contact?_vercel_no_cache=1" method="post">
+          <form style="min-height: 100%;" id="contact" action="/portfoliodesc" method="post">
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
                   <h6>Promoção</h6>
                   <h4>Ganhe <em>20% de desconto!</em></h4>
-                  <p>Informe o seu email para receber um cupon e ficar por dentro de todas as promoções.</p>
+                  <p>Informe o seu email ou telefone para receber um cupon e ficar por dentro de todas as promoções.</p>
                 </div>
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <input type="text" id="emailForm" name="emailForm" pattern="[^ @]*@[^ @]*" placeholder="Seu email"
+                  <input type="text" id="emailForm" name="emailForm" placeholder="Seu email ou telefone"
                     required="">
                 </fieldset>
               </div>
@@ -567,7 +567,7 @@
       });
     };
 
-    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+    $('.main-menu, .responsive-menu').on('click', 'a', function (e) {
       e.preventDefault();
       showSection($(this).attr('href'), true);
     });

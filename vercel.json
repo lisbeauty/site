@@ -17,11 +17,20 @@
             "continue": true
         },
         {
-            "src": "/contact",
+            "src": "/portfoliodesc",
             "headers": {
               "key" : "Cache-Control",
               "value" : "no-cache no-store must-revalidate"
-            }
+            },
+            "continue": true
+        },
+        {
+            "src": "/portfolio",
+            "headers": {
+              "key" : "Cache-Control",
+              "value" : "no-cache no-store must-revalidate"
+            },
+            "continue": true
         }
     ]
 }

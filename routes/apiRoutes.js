@@ -14,7 +14,8 @@ module.exports = function(app) {
 
     // system info
     const PATH_METRICS = "/metrics";
-    const PATH_CONTACT = "/contact";
+    const PATH_PORTFOLIO_DESC = "/portfoliodesc";
+    const PATH_PORTFOLIO = "/portfolio";
     const PATH_INFO = "/info";
 
     // /metrics
@@ -30,7 +31,10 @@ module.exports = function(app) {
     app.route(PATH_INFO).get(infoController.info);
 
     // /contact - trata form contato
-    app.route(PATH_CONTACT).post(infoController.contact);
+    app.route(PATH_PORTFOLIO_DESC).post(infoController.contact);
+
+    // /contact - trata form contato
+    app.route(PATH_PORTFOLIO).get(infoController.portfolio);
 
 
     /**

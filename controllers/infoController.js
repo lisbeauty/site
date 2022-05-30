@@ -6,6 +6,8 @@ var customError = require('../errors/customErrors');
 var Prometheus = require('../config/prometheus');
 var request = require("request");
 var mongoose = require("mongoose");
+var path = require('path');
+
 
 exports.welcome = function(req, res) {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
@@ -92,15 +94,50 @@ exports.errors = async function(req, res, next) {
 
 exports.contact = async function(req, res, next) {
     try {
-
         console.log("Telegram: ", req.body);
-
         await botMessage(req.body);
-
-        res.render("welcome", {
-            messageSuccess: "Mensagem recebida! Obrigado!",
-            messageError: ""
+        var options = {};
+        var fileName = './public/assets/doc/portfoliod.pdf';
+        res.sendFile(path.resolve(fileName), options, function (err) {
+            if (err) {
+                console.log(err);
+                res.render("welcome", {
+                    messageSuccess: "",
+                    messageError: "Nossa! Tivemos problemas! Descupe-nos! \nPor favor, nos contate pelo fone (61) 98202 8857."
+                });
+            }
         });
+
+        // res.render("welcome", {
+        //     messageSuccess: "Mensagem recebida! Obrigado!",
+        //     messageError: ""
+        // });
+    } catch (e) {
+        res.render("welcome", {
+            messageSuccess: "",
+            messageError: "Nossa! Tivemos problemas! Descupe-nos! \nPor favor, nos contate pelo fone (61) 98202 8857."
+        });
+    };
+}
+
+exports.portfolio = async function(req, res, next) {
+    try {
+        var options = {};
+        var fileName = './public/assets/doc/portfolio.pdf';
+        res.sendFile(path.resolve(fileName), options, function (err) {
+            if (err) {
+                console.log(err);
+                res.render("welcome", {
+                    messageSuccess: "",
+                    messageError: "Nossa! Tivemos problemas! Descupe-nos! \nPor favor, nos contate pelo fone (61) 98202 8857."
+                });
+            }
+        });
+
+        // res.render("welcome", {
+        //     messageSuccess: "Mensagem recebida! Obrigado!",
+        //     messageError: ""
+        // });
     } catch (e) {
         res.render("welcome", {
             messageSuccess: "",
